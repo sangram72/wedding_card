@@ -106,31 +106,34 @@ export default function WeddingBook() {
       >
         <div className="book-glow" />
 
-        <HTMLFlipBook
-          key={`${pageWidth}-${pageHeight}`}
-          width={pageWidth}
-          height={pageHeight}
-          size="stretch"
-          minWidth={260}
-          maxWidth={440}
-          minHeight={360}
-          maxHeight={620}
-          maxShadowOpacity={0.65}
-          showCover={true}
-          mobileScrollSupport={false}
-          usePortrait={true}
-          drawShadow={true}
-          flippingTime={950}
-          startPage={0}
-          autoSize={true}
-          clickEventForward={true}
-          useMouseEvents={true}
-          swipeDistance={25}
-          showPageCorners={true}
-          disableFlipByClick={false}
-          className="wedding-book"
-          style={{ margin: "0 auto" }}
-        >
+      <HTMLFlipBook
+  key={`${pageWidth}-${pageHeight}`}
+  width={pageWidth}
+  height={pageHeight}
+  size="stretch"
+  minWidth={260}
+  maxWidth={440}
+  minHeight={360}
+  maxHeight={620}
+  startZIndex={0}
+  maxShadowOpacity={0.65}
+  showCover={true}
+  mobileScrollSupport={false}
+  usePortrait={true}
+  drawShadow={true}
+  flippingTime={950}
+  startPage={0}
+  autoSize={true}
+  clickEventForward={true}
+  useMouseEvents={true}
+  swipeDistance={25}
+  showPageCorners={true}
+  disableFlipByClick={false}
+  className="wedding-book"
+  style={{ margin: "0 auto" }}
+>
+  
+
           {/* PAGE 1 — FRONT COVER */}
           <BookPage className="cover-page">
             <div className="cover-ornament cover-ornament-top">
