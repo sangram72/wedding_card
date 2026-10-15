@@ -1,0 +1,1503 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+  --wine: #390817;
+  --wine-light: #651b30;
+  --gold: #d7b16b;
+  --gold-light: #f4dfaa;
+  --paper: #fff6e6;
+  --ink: #572333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: var(--wine);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.loading-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--gold-light);
+  background: #300714;
+  font-family: Georgia, serif;
+}
+
+.loading-ornament {
+  color: var(--gold);
+  font-size: 52px;
+}
+
+.wedding-world {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: 24px 14px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--gold-light);
+  background:
+    radial-gradient(ellipse at 50% 42%, #792840 0%, transparent 49%),
+    radial-gradient(ellipse at 0% 100%, #4c1325, transparent 50%),
+    linear-gradient(145deg, #1c050c, #430e20 48%, #21050d);
+}
+
+.wedding-world::before {
+  content: "✧  ❋  ✧  ❋  ✧  ❋  ✧";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 100%;
+  color: #d7b16b25;
+  text-align: center;
+  font-size: 23px;
+  letter-spacing: 18px;
+  pointer-events: none;
+}
+
+.ambient {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: .2;
+  pointer-events: none;
+  animation: glow 7s ease-in-out infinite alternate;
+}
+
+.ambient-one {
+  top: 20%;
+  left: -150px;
+  background: #edb25c;
+}
+
+.ambient-two {
+  right: -140px;
+  bottom: 10%;
+  background: #b93c62;
+  animation-delay: -3s;
+}
+
+@keyframes glow {
+  from {
+    transform: scale(.8);
+    opacity: .12;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: .28;
+  }
+}
+
+.book-heading {
+  z-index: 2;
+  text-align: center;
+  margin: 12px 0 23px;
+}
+
+.book-heading p {
+  margin: 6px 0;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.heading-ornament {
+  color: var(--gold);
+  font-size: 22px;
+}
+
+.book-stage {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 920px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 0 100px;
+}
+
+.book-glow {
+  position: absolute;
+  width: 65%;
+  height: 60%;
+  top: 20%;
+  background: #e4ad5e13;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.wedding-book {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.book-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: inset 0 0 25px #6d3a1c12;
+}
+
+.page-paper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  background:
+    radial-gradient(ellipse at 15% 15%, #fffdf2 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 85%, #ecd9b8 0%, transparent 48%),
+    linear-gradient(135deg, #fff8e9, #f7e8ce);
+}
+
+.page-border {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 15px;
+  text-align: center;
+  border: 1px solid #c8a15e;
+  outline: 1px solid #c8a15e66;
+  outline-offset: -6px;
+}
+
+.page-border::before,
+.page-border::after {
+  position: absolute;
+  color: #ae8548;
+  font-size: 21px;
+  opacity: .9;
+}
+
+.page-border::before {
+  content: "❧";
+  top: 7px;
+  left: 10px;
+  transform: rotate(-35deg);
+}
+
+.page-border::after {
+  content: "❧";
+  bottom: 7px;
+  right: 10px;
+  transform: rotate(145deg);
+}
+
+.page-number {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #a07a43;
+}
+
+.page-kicker {
+  margin: 0 0 20px;
+  color: #9b7742;
+  font-family: 'Playfair Display', serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+  line-height: 1.7;
+}
+
+.body-copy {
+  max-width: 270px;
+  margin: 12px auto;
+  color: #6e4c48;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.script-heading {
+  margin: 12px 0;
+  color: #792a40;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(27px, 4vw, 38px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.alpana {
+  color: #b58b4b;
+  font-size: 62px;
+  line-height: 1;
+  animation: slow-rotate 30s linear infinite;
+}
+
+@keyframes slow-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.heart-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 14px 0;
+  color: #a45a62;
+}
+
+.heart-divider span {
+  width: 36px;
+  height: 1px;
+  background: #c3a16a;
+}
+
+.page-flower {
+  margin: 12px 0;
+  color: #b18a4a;
+  font-size: 37px;
+}
+
+.page-signature {
+  margin: 15px 0 0;
+  color: #9a7045;
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px;
+}
+
+/* Covers */
+
+.cover-page,
+.back-cover {
+  background:
+    radial-gradient(ellipse at 50% 45%, #6d2037, transparent 75%),
+    linear-gradient(135deg, #64162d, #300714 50%, #501026);
+  color: var(--gold-light);
+}
+
+.cover-page .page-paper,
+.back-cover .page-paper {
+  padding: 12px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #ffffff04 0px,
+      #ffffff04 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    linear-gradient(140deg, #64172d, #300714 50%, #501026);
+}
+
+/* Align the Page 2 signature consistently */
+.intro-page .page-signature {
+  margin-top: 15px;
+  margin-bottom: 0;
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+  transform: translateY(-27px);
+}
+
+.cover-page .page-border,
+.back-cover .page-border {
+  border: 1px solid #d4ae68;
+  outline: 1px solid #d4ae6866;
+}
+
+.cover-page .page-border::before,
+.cover-page .page-border::after,
+.back-cover .page-border::before,
+.back-cover .page-border::after {
+  color: var(--gold);
+}
+
+.cover-center,
+.back-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.cover-ornament {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: var(--gold);
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 7px;
+}
+
+.cover-ornament-top {
+  top: 27px;
+}
+
+.cover-ornament-bottom {
+  bottom: 28px;
+}
+
+.cover-small {
+  margin-bottom: 20px;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+.cover-emblem {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 75px;
+  height: 75px;
+  margin-bottom: 12px;
+  border: 1px solid #d7b16b88;
+  border-radius: 50%;
+  color: var(--gold-light);
+  animation: emblem-glow 3s ease-in-out infinite alternate;
+}
+
+.cover-emblem span {
+  position: absolute;
+  top: -11px;
+  right: -1px;
+  color: var(--gold);
+}
+
+@keyframes emblem-glow {
+  from {
+    box-shadow: 0 0 5px #d7b16b10;
+  }
+  to {
+    box-shadow: 0 0 28px #d7b16b30;
+  }
+}
+
+.cover-title {
+  margin: 8px 0 0;
+  color: var(--gold-light);
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(37px, 6vw, 52px);
+  font-weight: 400;
+}
+
+.cover-subtitle {
+  margin: -2px 0 0;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.gold-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin: 17px auto;
+  color: #bc9655;
+}
+
+.gold-rule::before,
+.gold-rule::after {
+  content: "";
+  width: 35px;
+  height: 1px;
+  background: #bc9655;
+}
+
+.cover-names {
+  margin: 8px 0;
+  color: #fff0c8;
+  font-family: 'Great Vibes', cursive;
+  font-size: 29px;
+}
+
+.cover-date {
+  margin: 8px 0 24px;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+.cover-open {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+  animation: prompt-pulse 2s ease-in-out infinite;
+}
+
+@keyframes prompt-pulse {
+  0%, 100% {
+    opacity: .65;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Couple page */
+
+.couple-emblem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 15px 0 22px;
+  color: #9e5a5b;
+}
+
+.couple-emblem span {
+  color: #b68b4c;
+  font-size: 27px;
+}
+
+.couple-label {
+  margin: 7px 0;
+  color: #a47c48;
+  font-family: 'Playfair Display', serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.inside-name {
+  margin: 5px 0;
+  color: #71253b;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(28px, 4.4vw, 38px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+/* Wedding and reception pages */
+
+.event-emblem {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 13px;
+  border: 1px solid #c8a15e;
+  border-radius: 50%;
+  color: #a57a43;
+  font-size: 29px;
+}
+
+.event-title {
+  margin: 2px 0 -4px;
+  color: #682037;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 400;
+}
+
+.event-script {
+  margin: 0 0 13px;
+  color: #a16d42;
+  font-family: 'Great Vibes', cursive;
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.event-date-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin: 5px 0 12px;
+  padding: 10px 3px;
+  border-top: 1px solid #c8a15e;
+  border-bottom: 1px solid #c8a15e;
+  color: #94683b;
+  font-family: 'Playfair Display', serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.event-date-box strong {
+  color: #76283d;
+  font-size: 39px;
+  font-weight: 400;
+}
+
+.event-detail-book {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  width: 100%;
+  margin: 10px 0;
+  color: #945344;
+  text-align: left;
+}
+
+.event-detail-book svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.event-detail-book div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.event-detail-book strong {
+  color: #63253a;
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.event-detail-book span {
+  color: #71564c;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.venue-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 8px 0;
+  padding: 9px 12px;
+  border: 1px solid #b18a4a;
+  color: #6e263b;
+  font-family: 'Playfair Display', serif;
+  font-size: 8px;
+  letter-spacing: 1px;
+  transition: background 200ms ease;
+}
+
+.venue-button:hover {
+  background: #f1dfc2;
+}
+
+.event-note {
+  margin: 8px 0 0;
+  color: #997345;
+  font-family: 'Great Vibes', cursive;
+  font-size: 21px;
+}
+
+.reception-page {
+  background: #f5e8d0;
+}
+
+/* Thank-you page */
+
+.thankyou-heart {
+  display: grid;
+  place-items: center;
+  width: 85px;
+  height: 85px;
+  margin: 20px 0;
+  border: 1px solid #c8a15e;
+  border-radius: 50%;
+  color: #a65d63;
+  animation: emblem-glow 3s ease-in-out infinite alternate;
+}
+
+.final-couple {
+  margin: 9px 0;
+  color: #75283e;
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+}
+
+/* Back cover */
+
+.back-title {
+  margin: 2px 0;
+  color: var(--gold-light);
+  font-family: 'Great Vibes', cursive;
+  font-size: 38px;
+}
+
+.back-center > svg {
+  margin-bottom: 20px;
+  color: var(--gold);
+}
+
+.back-date {
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.back-thanks {
+  max-width: 160px;
+  color: #f0d7c1;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Page-flip guide */
+
+.flip-guide {
+  position: absolute;
+  z-index: 5;
+  bottom: 16px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: min(100% - 12px, 510px);
+  padding: 13px 14px;
+  transform: translateX(-50%);
+  border: 1px solid #d7b16b8c;
+  border-radius: 12px;
+  background: #260711f2;
+  box-shadow: 0 10px 35px #0005;
+  animation: guide-float 2.8s ease-in-out infinite;
+  backdrop-filter: blur(12px);
+}
+
+@keyframes guide-float {
+  0%, 100% {
+    margin-bottom: 0;
+  }
+  50% {
+    margin-bottom: 5px;
+  }
+}
+
+.guide-icon {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  border: 1px solid #d7b16b;
+  border-radius: 50%;
+  color: var(--gold);
+}
+
+.guide-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.guide-text strong {
+  color: #ffedc6;
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.guide-text span {
+  color: #e1c9b3;
+  font-size: 12px;
+}
+
+.guide-arrows {
+  display: flex;
+  gap: 3px;
+  color: var(--gold);
+  animation: arrows-nudge 1.4s ease-in-out infinite;
+}
+
+@keyframes arrows-nudge {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+.guide-dismiss {
+  padding: 7px 9px;
+  border: 1px solid #d7b16b88;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--gold-light);
+  font-family: 'Playfair Display', serif;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+/* Footer */
+
+.book-footer {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 3px 0 12px;
+  color: #e8c985;
+  font-family: 'Playfair Display', serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.footer-separator {
+  color: #9c6b38;
+}
+
+.bottom-hint {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 5px 0 0;
+  color: #c8a15e;
+  font-family: 'Playfair Display', serif;
+  font-size: 8px;
+  letter-spacing: 3px;
+  animation: bob 2s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* Responsive layout */
+
+@media (max-width: 600px) {
+  .wedding-world {
+    padding: 17px 5px 25px;
+  }
+
+  .book-heading {
+    margin-bottom: 15px;
+  }
+
+  .book-heading p {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .book-stage {
+    width: 100%;
+    padding-bottom: 112px;
+  }
+
+  .page-paper {
+    padding: 9px;
+  }
+
+  .page-border {
+    padding: 15px 9px;
+  }
+
+  .body-copy {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .page-kicker {
+    font-size: 7px;
+    letter-spacing: 1.3px;
+  }
+
+  .inside-name {
+    font-size: clamp(24px, 7vw, 34px);
+  }
+
+  .event-detail-book span {
+    font-size: 12px;
+  }
+
+  .event-detail-book strong {
+    font-size: 12px;
+  }
+
+  .event-date-box strong {
+    font-size: 32px;
+  }
+
+  .flip-guide {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .guide-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .guide-text strong {
+    font-size: 10px;
+  }
+
+  .guide-text span {
+    font-size: 11px;
+  }
+
+  .guide-arrows {
+    display: none;
+  }
+
+  .guide-dismiss {
+    padding: 6px;
+    font-size: 9px;
+  }
+
+  .book-footer {
+    gap: 7px;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Responsive safeguards for phones, tablets and short screens */
+
+.wedding-world {
+  width: 100%;
+  min-height: 100svh;
+  min-height: 100dvh;
+  padding-left: max(8px, env(safe-area-inset-left));
+  padding-right: max(8px, env(safe-area-inset-right));
+  padding-bottom: max(20px, env(safe-area-inset-bottom));
+}
+
+.book-stage,
+.wedding-book {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.book-stage {
+  width: 100%;
+  overflow: visible;
+}
+
+.wedding-book > div {
+  max-width: 100%;
+}
+
+.book-page,
+.page-paper,
+.page-border {
+  min-width: 0;
+  min-height: 0;
+}
+
+.page-paper {
+  overflow: hidden;
+}
+
+.page-border {
+  overflow-wrap: anywhere;
+}
+
+.flip-guide {
+  max-width: calc(100vw - 20px);
+}
+
+.book-footer {
+  max-width: 100%;
+  padding: 0 8px;
+}
+
+@media (max-width: 380px) {
+  .wedding-world {
+    padding-top: 12px;
+  }
+
+  .book-heading {
+    margin: 8px 0 12px;
+  }
+
+  .book-heading p {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+
+  .book-stage {
+    padding-bottom: 108px;
+  }
+
+  .page-paper {
+    padding: 7px;
+  }
+
+  .page-border {
+    padding: 12px 7px;
+  }
+
+  .page-kicker {
+    margin-bottom: 12px;
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+
+  .body-copy {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .script-heading {
+    font-size: 25px;
+  }
+
+  .cover-names {
+    font-size: 25px;
+  }
+
+  .cover-title {
+    font-size: 35px;
+  }
+
+  .cover-subtitle {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  .event-title {
+    font-size: 25px;
+  }
+
+  .event-script {
+    font-size: 24px;
+  }
+
+  .event-detail-book {
+    gap: 6px;
+    margin: 7px 0;
+  }
+
+  .event-detail-book strong,
+  .event-detail-book span {
+    font-size: 11px;
+  }
+
+  .venue-button {
+    font-size: 7px;
+    padding: 7px 8px;
+  }
+
+  .flip-guide {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .guide-text strong {
+    font-size: 9px;
+  }
+
+  .guide-text span {
+    font-size: 10px;
+  }
+}
+
+@media (max-height: 650px) and (min-width: 601px) {
+  .wedding-world {
+    padding-top: 8px;
+    padding-bottom: 12px;
+  }
+
+  .book-heading {
+    margin: 4px 0 8px;
+  }
+
+  .book-stage {
+    padding-bottom: 76px;
+  }
+
+  .flip-guide {
+    bottom: 8px;
+  }
+
+  .book-footer {
+    margin-bottom: 5px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .wedding-world {
+    padding-top: 6px;
+  }
+
+  .book-heading {
+    margin: 2px 0 5px;
+  }
+
+  .book-heading p {
+    font-size: 7px;
+  }
+
+  .book-stage {
+    padding-bottom: 70px;
+  }
+
+  .flip-guide {
+    bottom: 5px;
+  }
+
+  .bottom-hint {
+    margin-top: 2px;
+  }
+}
+
+/* Alignment refinements — preserve the original wedding-book design */
+
+.page-border {
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.page-kicker {
+  max-width: 100%;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.body-copy {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-wrap: pretty;
+}
+
+.heart-divider,
+.gold-rule {
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.couple-emblem {
+  justify-content: center;
+  align-self: center;
+}
+
+.inside-name,
+.final-couple,
+.page-signature {
+  width: 100%;
+  text-align: center;
+}
+
+/* Center venue details consistently on both event pages */
+
+.event-detail-book {
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.event-detail-book > div {
+  flex: 0 1 auto;
+  align-items: center;
+  text-align: center;
+}
+
+.event-detail-book > svg {
+  flex-shrink: 0;
+  margin-top: 0;
+}
+
+.event-detail-book strong,
+.event-detail-book span {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.venue-button {
+  align-self: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+.event-date-box {
+  justify-content: center;
+  text-align: center;
+}
+
+.event-date-box > * {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .event-detail-book {
+    gap: 7px;
+    margin: 8px auto;
+  }
+
+  .event-detail-book > div {
+    min-width: 0;
+  }
+
+  .venue-button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* =========================================
+   RESPONSIVE WEDDING BOOK — ALL DEVICES
+   Preserves the original maroon-and-gold design
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.wedding-world {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: clip;
+  padding-left: max(12px, env(safe-area-inset-left));
+  padding-right: max(12px, env(safe-area-inset-right));
+}
+
+.book-heading,
+.book-stage,
+.book-footer {
+  width: 100%;
+  min-width: 0;
+}
+
+.book-stage {
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.wedding-book {
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.wedding-book > div {
+  max-width: 100%;
+}
+
+.book-page,
+.page-paper,
+.page-border {
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+}
+
+.page-paper {
+  overflow: hidden;
+}
+
+.page-border {
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.page-border img,
+.page-border svg {
+  max-width: 100%;
+}
+
+.page-kicker,
+.body-copy,
+.script-heading,
+.inside-name,
+.final-couple,
+.page-signature,
+.event-title,
+.event-script {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+.body-copy {
+  width: 100%;
+  margin-inline: auto;
+}
+
+.event-detail-book {
+  width: 100%;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.event-detail-book > div {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.event-detail-book strong,
+.event-detail-book span {
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.venue-button {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  touch-action: manipulation;
+}
+
+.flip-guide {
+  max-width: calc(100vw - 24px);
+}
+
+.guide-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .wedding-world {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 10px;
+  }
+
+  .book-heading {
+    margin-top: 4px;
+    margin-bottom: 10px;
+  }
+
+  .book-heading p {
+    font-size: clamp(6px, 2vw, 8px);
+    letter-spacing: 1px;
+  }
+
+  .book-stage {
+    padding-bottom: 100px;
+  }
+
+  .page-paper {
+    padding: 6px;
+  }
+
+  .page-border {
+    padding: 12px 7px;
+  }
+
+  .body-copy {
+    font-size: clamp(11px, 3.5vw, 14px);
+    line-height: 1.4;
+  }
+
+  .script-heading {
+    font-size: clamp(22px, 7vw, 28px);
+  }
+
+  .event-title {
+    font-size: clamp(20px, 6vw, 25px);
+  }
+
+  .event-script {
+    font-size: clamp(20px, 6vw, 25px);
+  }
+
+  .event-detail-book {
+    gap: 5px;
+    margin: 6px auto;
+  }
+
+  .event-detail-book strong,
+  .event-detail-book span {
+    font-size: clamp(9px, 3vw, 11px);
+  }
+
+  .venue-button {
+    padding: 7px;
+    font-size: 8px;
+  }
+
+  .flip-guide {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .book-footer {
+    gap: 5px;
+    font-size: 7px;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Standard and large phones */
+@media (min-width: 381px) and (max-width: 600px) {
+  .wedding-world {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .book-stage {
+    padding-bottom: 105px;
+  }
+
+  .page-paper {
+    padding: 8px;
+  }
+
+  .page-border {
+    padding: 14px 9px;
+  }
+
+  .body-copy {
+    font-size: clamp(12px, 3.8vw, 15px);
+  }
+
+  .event-detail-book {
+    gap: 7px;
+  }
+
+  .venue-button {
+    min-height: 36px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .wedding-world {
+    padding-inline: 16px;
+  }
+
+  .book-stage {
+    max-width: 900px;
+  }
+
+  .page-paper {
+    padding: 12px;
+  }
+
+  .page-border {
+    padding: 16px 12px;
+  }
+
+  .body-copy {
+    font-size: clamp(13px, 1.8vw, 16px);
+  }
+}
+
+/* Desktop and wide screens */
+@media (min-width: 1025px) {
+  .wedding-world {
+    padding-inline: 24px;
+  }
+
+  .book-stage {
+    max-width: 960px;
+  }
+}
+
+/* Short screens and landscape phones */
+@media (orientation: landscape) and (max-height: 520px) {
+  .wedding-world {
+    padding-top: 4px;
+    padding-bottom: 12px;
+  }
+
+  .book-heading {
+    margin-top: 2px;
+    margin-bottom: 5px;
+  }
+
+  .book-heading p {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .book-stage {
+    padding-bottom: 75px;
+  }
+
+  .flip-guide {
+    bottom: 5px;
+  }
+
+  .bottom-hint {
+    margin-top: 2px;
+  }
+}
+
+/* Reduced-motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .ambient,
+  .alpana,
+  .cover-emblem,
+  .cover-open,
+  .flip-guide,
+  .guide-arrows,
+  .bottom-hint {
+    animation: none !important;
+  }
+}
