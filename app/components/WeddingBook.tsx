@@ -107,7 +107,7 @@ export default function WeddingBook() {
         <div className="book-glow" />
 
       <HTMLFlipBook
-  key={`${pageWidth}-${pageHeight}`}
+key={pageWidth}
   width={pageWidth}
   height={pageHeight}
   size="stretch"
