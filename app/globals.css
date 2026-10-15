@@ -1501,3 +1501,77 @@ a {
     animation: none !important;
   }
 }
+
+/* Natural page scrolling — keep the book design and page-flip interaction */
+html {
+  min-height: 100%;
+  height: auto;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.wedding-world {
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: auto;
+  overflow: visible;
+  overflow-x: clip;
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+  touch-action: pan-y;
+}
+
+.book-stage {
+  height: auto;
+  overflow: visible;
+  padding-bottom: 120px;
+}
+
+.flip-guide {
+  position: absolute;
+}
+
+/* On phones, allow normal vertical touch scrolling and avoid fixed-height feel */
+@media (max-width: 600px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: auto;
+  }
+
+  .wedding-world {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: visible;
+    overflow-x: clip;
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+  }
+
+  .book-stage {
+    height: auto;
+    overflow: visible;
+    padding-bottom: 120px;
+  }
+
+  /* Keep animations from causing mobile repaint flicker without blocking scroll */
+  .ambient {
+    animation: none !important;
+    filter: none !important;
+    opacity: 0.08;
+  }
+
+  .book-glow {
+    filter: none !important;
+    opacity: 0.25;
+  }
+}
